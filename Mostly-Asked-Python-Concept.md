@@ -2,8 +2,10 @@
 #### List
 - List are mutable
 - they are container to store different types of objects . They are used to iterate objects.
-- Syntax of List :  
-   list = ['a', 'b', 1, 3, 4]
+- Syntax of List :
+  
+      list = ['a', 'b', 1, 3, 4]
+  
 - The iterartion performed in list is comparetively slower than tuple.
 - Insertion , deletion operation can be performed better.
 - It consume more memory.
@@ -12,7 +14,9 @@
 - tuple are immutable.
 - tuple are container that store different type of immutable objects.
 - Syntax of tuple :
-  tuple = ( 'a', 'b', 1, 2, 3)
+  
+     tuple = ( 'a', 'b', 1, 2, 3)
+     
 - it consume less memory
 - iteration is processed faster.
 - element can be accessed faster.
@@ -51,39 +55,50 @@ comprehension means the expression , which is executed for each element along wi
 
 #### List Comprehension
 Syntax :
- [expression **for** item **in** iterable **if** condition]
+      [expression **for** item **in** iterable **if** condition]
 
 Example : 
-   #Comman way :
-   ls = []
-   for i in range(10):
-      if i%2:
-         ls.append(i*i)
 
-   #Using List comprehension
-   ls = [i*i for i in range(10) if i%2]
-   print(ls)
+      #Comman way :
+      ls = []
+      for i in range(10):
+         if i%2:
+            ls.append(i*i)
+   
+      #Using List comprehension
+      ls = [i*i for i in range(10) if i%2]
+      print(ls)
 
 Output : [1, 9, 25, 49, 81]
 
 #### Dict Comprehension
 Syntax :
-   {key : value **for** (key,value) **in** iterable **if** condition }
+      {key : value **for** (key,value) **in** iterable **if** condition }
 
 Example :
-   #common way 
-   d = {}
-   for n in range(10):
-      if n%2:
-         d[n]=n*n
-   print(d)
 
-   #using dict comprehension
-   d = {n:n*n for n in range(10) if n%2}
-   print(d)
+      #common way 
+      d = {}
+      for n in range(10):
+         if n%2:
+            d[n]=n*n
+      print(d)
+
+      #using dict comprehension
+      d = {n:n*n for n in range(10) if n%2}
+      print(d)
 
 Output : {1:1, 3:9, 5:25, 7:49, 9:81}
 
 
-
+### How to manage memory in python ?
+- In python, we have private heap for storing python objects and data structures.
+- Interpreter takecare of python heap and programmer has no access to it.
+- The allocation of heap space to python object is done by python memory manager.
+- Python core APIs provide some tools to programmer for code reliable and robust program.
+- python garbage collector recycle the unused memort. The python object which is no longer referenced by the python program is determined by it. the memory occupied by python object is freed and Make it available to heap space.
+- the gc module functions are used to enable/disable the pytho garbage collector:
+     gc.enable() : Enable the automatic garbage collection.
+     gc.disable() : Disable the automatic grabage collection.
+  
    
